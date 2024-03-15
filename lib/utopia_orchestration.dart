@@ -3,5 +3,5 @@
 /// More dartdocs go here.
 library;
 
-export 'src/utopia_orchestration_base.dart';
+export 'src/orchestration.dart';
 export 'src/adapters/docker_cli.dart';
