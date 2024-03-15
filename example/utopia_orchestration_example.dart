@@ -1,12 +1,13 @@
 import 'package:utopia_orchestration/utopia_orchestration.dart';
 
 void main() async {
-  final cli = DockerCLI();
-  // cli.remove('test-hello-world');
-  final res = await cli.run('hello-world', 'test-hello-world');
+  final dockerCli = DockerCLI();
+  final orchestrator = Orchestration(dockerCli);
+  final res =
+      await orchestrator.run(image: 'hello-world', name: 'test-hello-world');
   print(res);
-  print(await cli.list());
-  final stats = await cli.getStats(container: 'test-hello-world');
+  print(await orchestrator.list());
+  final stats = await orchestrator.getStats();
   print(stats);
-  await cli.remove('test-hello-world');
+  await orchestrator.remove('test-hello-world');
 }
