@@ -4,4 +4,4 @@
 library;
 
 export 'src/utopia_orchestration_base.dart';
-export 'src/docker_cli.dart';
+export 'src/adapters/docker_cli.dart';
