@@ -63,14 +63,15 @@ class Container {
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
-  
+
     return other is Container &&
-      other.name == name &&
-      other.id == id &&
-      other.status == status &&
-      MapEquality<String, String>().equals(other.labels, labels);
+        other.name == name &&
+        other.id == id &&
+        other.status == status &&
+        MapEquality<String, String>().equals(other.labels, labels);
   }
 
   @override
-  int get hashCode => name.hashCode ^ id.hashCode ^ status.hashCode ^ labels.hashCode;
+  int get hashCode =>
+      name.hashCode ^ id.hashCode ^ status.hashCode ^ labels.hashCode;
 }

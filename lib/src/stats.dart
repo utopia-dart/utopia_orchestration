@@ -66,17 +66,24 @@ class Stats {
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
-  
+
     return other is Stats &&
-      other.containerId == containerId &&
-      other.containerName == containerName &&
-      other.cpuUsage == cpuUsage &&
-      other.memoryUsage == memoryUsage &&
-      MapEquality<String, double>().equals(other.diskIO, diskIO) &&
-      MapEquality<String, double>().equals(other.memoryIO, memoryIO) &&
-      MapEquality<String, double>().equals(other.networkIO, networkIO);
+        other.containerId == containerId &&
+        other.containerName == containerName &&
+        other.cpuUsage == cpuUsage &&
+        other.memoryUsage == memoryUsage &&
+        MapEquality<String, double>().equals(other.diskIO, diskIO) &&
+        MapEquality<String, double>().equals(other.memoryIO, memoryIO) &&
+        MapEquality<String, double>().equals(other.networkIO, networkIO);
   }
 
   @override
-  int get hashCode => containerId.hashCode ^ containerName.hashCode ^ cpuUsage.hashCode ^ memoryUsage.hashCode ^ diskIO.hashCode ^ memoryIO.hashCode ^ networkIO.hashCode;
+  int get hashCode =>
+      containerId.hashCode ^
+      containerName.hashCode ^
+      cpuUsage.hashCode ^
+      memoryUsage.hashCode ^
+      diskIO.hashCode ^
+      memoryIO.hashCode ^
+      networkIO.hashCode;
 }

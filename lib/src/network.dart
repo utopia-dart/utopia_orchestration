@@ -61,14 +61,15 @@ class Network {
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
-  
+
     return other is Network &&
-      other.name == name &&
-      other.id == id &&
-      other.driver == driver &&
-      other.scope == scope;
+        other.name == name &&
+        other.id == id &&
+        other.driver == driver &&
+        other.scope == scope;
   }
 
   @override
-  int get hashCode => name.hashCode ^ id.hashCode ^ driver.hashCode ^ scope.hashCode;
+  int get hashCode =>
+      name.hashCode ^ id.hashCode ^ driver.hashCode ^ scope.hashCode;
 }

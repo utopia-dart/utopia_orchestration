@@ -40,12 +40,14 @@ class Orchestration {
   }
 
   /// Gets usage statistics for containers.
-  Future<List<Stats>> getStats({String? container, Map<String, String>? filters}) async {
+  Future<List<Stats>> getStats(
+      {String? container, Map<String, String>? filters}) async {
     return adapter.getStats(container: container, filters: filters);
   }
 
   /// Disconnects a container from a network.
-  Future<bool> networkDisconnect(String container, String network, {bool force = false}) async {
+  Future<bool> networkDisconnect(String container, String network,
+      {bool force = false}) async {
     return adapter.networkDisconnect(container, network, force: force);
   }
 
